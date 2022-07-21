@@ -1,16 +1,34 @@
 <template>
-  <hello-world />
+  <v-app>
+    <div class="d-flex flex-row">
+      <NavBarComponent class="nav_bar"/>
+      <div class="content">
+        <v-main>
+          <router-view/>
+        </v-main>
+      </div>
+    </div>
+  </v-app>
 </template>
 
 <script lang="ts">
   import Vue from 'vue'
-  import HelloWorld from '../components/HelloWorld.vue'
+  import NavBarComponent from './components/NavBarComponent.vue'
 
   export default Vue.extend({
     name: 'HomeComponent',
 
     components: {
-      HelloWorld,
+      NavBarComponent
     },
   })
 </script>
+
+<style scoped lang="scss">
+.nav_bar {
+  width: 25vw;
+}
+.content {
+  width: 75vw;
+}
+</style>
