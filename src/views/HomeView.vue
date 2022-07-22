@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row h-100">
       <NavBarComponent class="nav_bar"/>
       <div class="content">
         <v-main>
@@ -29,6 +29,7 @@
   width: 25vw;
 }
 .content {
-  width: 75vw;
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -4,6 +4,7 @@
     max-width="300"
     height="100%"
     tile
+    style="border-right: 1px solid #DDDDDD"
   >
     <v-list shaped>
       <v-subheader>TO-DO's</v-subheader>
@@ -42,7 +43,6 @@ import Vue from 'vue'
     }),
     methods: {
         changeRoute(routeName: string) {
-            console.log('passou aq')
             this.$router.push({ name: routeName })
         }
     },
