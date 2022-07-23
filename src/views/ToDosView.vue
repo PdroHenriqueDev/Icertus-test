@@ -72,9 +72,6 @@
 
 <style scoped lang="scss">
 .content_container {
-  .input_container {
-
-  }
   .icon_container {
     width: 50px;
     height: 50px;

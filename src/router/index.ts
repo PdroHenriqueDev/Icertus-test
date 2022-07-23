@@ -15,13 +15,18 @@ const routes: Array<RouteConfig> = [
         name: 'todos',
         component: ToDosView,
       },
+      {
+        path: '/done',
+        name: 'done',
+        component: () => import(/* webpackChunkName: "done" */ '../views/DoneView.vue'),
+      },
+      {
+        path: '/pending',
+        name: 'pending',
+        component: () => import(/* webpackChunkName: "done" */ '../views/PendingView.vue'),
+      },
     ]
   },
-  // {
-  //   path: '/todos',
-  //   name: 'todos',
-  //   component: () => import(/* webpackChunkName: "todos" */ '../views/ToDosView.vue'),
-  // }
 ]
 
 const router = new VueRouter({

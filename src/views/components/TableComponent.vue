@@ -1,5 +1,4 @@
 <template>
-  <v-app>
     <div class="table_container">
         <v-data-table
             :headers="headersWithAction"
@@ -94,18 +93,40 @@
             </template>
         </v-snackbar>
 
+        <!-- the readOnly table -->
         <v-data-table
             v-else
             :headers="headers"
-            :items="todos"
+            :items="data"
             class="elevation-1 overflow-y-auto"
             :loading="shouldLoad"
             loading-text="Loading... Please wait"
             height="60vh"
             width="60vw"
-        ></v-data-table>
+        >
+            <template v-slot:[`item.done`]="{ item }">
+                <div v-if="item.done">
+                    <v-icon
+                    v-b-tooltip.hover title="Marked as done"
+                    small
+                    color="green"
+                    >
+                        fa-solid fa-check
+                    </v-icon>
+                </div>
+
+                <div v-if="!item.done">
+                    <v-icon
+                    v-b-tooltip.hover title="Unfinished"
+                    small
+                    color="red"
+                    >
+                        fa-solid fa-xmark
+                    </v-icon>
+                </div>
+            </template>
+        </v-data-table>
     </div>
-  </v-app>
 </template>
 
 <script lang="ts">
@@ -117,6 +138,7 @@ import { ToDo } from '@/types/todo'
   export default Vue.extend({
         props: {
             showActions: Boolean,
+            data: []
         },
         setup() {
             const store = useTodosStore()
