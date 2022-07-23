@@ -33,43 +33,68 @@
 
             <template v-slot:[`item.done`]="{ item }">
                 <div v-if="item.done">
-                    <v-icon
-                    v-b-tooltip.hover title="Marked as done"
-                    small
-                    color="green"
-                    >
-                        fa-solid fa-check
-                    </v-icon>
+                    <v-tooltip left>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-icon
+                            small
+                            color="green"
+                            v-bind="attrs"
+                            v-on="on"
+                        >
+                            fa-solid fa-check
+                        </v-icon>
+                    </template>
+                    <span>Marked as done</span>
+                    </v-tooltip>
                 </div>
 
                 <div v-if="!item.done">
-                    <v-icon
-                    v-b-tooltip.hover title="Unfinished"
-                    small
-                    color="red"
-                    >
-                        fa-solid fa-xmark
-                    </v-icon>
+                    <v-tooltip left>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-icon
+                            small
+                            color="red"
+                            v-bind="attrs"
+                            v-on="on"
+                        >
+                            fa-solid fa-xmark
+                        </v-icon>
+                    </template>
+                    <span>Unfinished</span>
+                    </v-tooltip>
                 </div>
             </template>
 
-
             <template v-slot:[`item.actions`]="{ item }">
-                <v-icon
-                    v-b-tooltip.hover title="Mark as done"
-                    small
-                    class="mr-2"
-                    @click="markAsDone(item)"
-                >
-                    fa-solid fa-check
-                </v-icon>
-                <v-icon
-                    v-b-tooltip.hover title="Delete"
-                    small
-                    @click="deleteById(item.id)"
-                >
-                    mdi-delete
-                </v-icon>
+                <v-tooltip left>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-icon
+                            small
+                            class="mr-2"
+                            @click="markAsDone(item)"
+                            v-bind="attrs"
+                            v-on="on"
+                        >
+                            fa-solid fa-check
+                        </v-icon>
+                    </template>
+                    <span>Mark as done</span>
+                </v-tooltip>
+
+                <v-tooltip left>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-icon
+                            small
+                            @click="deleteById(item.id)"
+                            v-bind="attrs"
+                            v-on="on"
+                        >
+                            mdi-delete
+                        </v-icon>
+                    </template>
+                    <span>Delete</span>
+                </v-tooltip>
+                
             </template>
         
         </v-data-table>
@@ -97,7 +122,7 @@
         <v-data-table
             v-else
             :headers="headers"
-            :items="data"
+            :items="todos"
             class="elevation-1 overflow-y-auto"
             :loading="shouldLoad"
             loading-text="Loading... Please wait"
@@ -106,23 +131,35 @@
         >
             <template v-slot:[`item.done`]="{ item }">
                 <div v-if="item.done">
-                    <v-icon
-                    v-b-tooltip.hover title="Marked as done"
-                    small
-                    color="green"
-                    >
-                        fa-solid fa-check
-                    </v-icon>
+                     <v-tooltip left>
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-icon
+                                small
+                                color="green"
+                                v-bind="attrs"
+                                v-on="on"
+                            >
+                                fa-solid fa-check
+                            </v-icon>
+                        </template>
+                        <span>Marked as done</span>
+                    </v-tooltip>
                 </div>
 
                 <div v-if="!item.done">
-                    <v-icon
-                    v-b-tooltip.hover title="Unfinished"
-                    small
-                    color="red"
-                    >
-                        fa-solid fa-xmark
-                    </v-icon>
+                    <v-tooltip left>
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-icon
+                                small
+                                color="red"
+                                v-bind="attrs"
+                                v-on="on"
+                            >
+                                fa-solid fa-xmark
+                            </v-icon>
+                        </template>
+                        <span>Unfinished</span>
+                    </v-tooltip>
                 </div>
             </template>
         </v-data-table>
@@ -152,15 +189,12 @@ import { ToDo } from '@/types/todo'
                 shouldLoad,
                 deleteById: (id: number) => {
                     deleteById(id)
-                    fetchData()
                 },
                 updateById: (toDo: ToDo) => {
                     updateById(toDo)
-                    fetchData()
                 },
                 markAsDone: (toDo: ToDo) => {
                     markAsDone(toDo)
-                    fetchData()
                 }
             }
         },

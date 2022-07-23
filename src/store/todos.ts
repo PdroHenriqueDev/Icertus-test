@@ -19,7 +19,7 @@ export const useTodosStore = defineStore('todos', {
       async fetchData() {
         try {
           const res  = await axios.get('http://localhost:3001/todos')
-          this.todos = res.data;
+          this.todos = res.data
           setTimeout(() => this.shouldLoad = false, 1000)
         } catch (error) {
           console.log(error)
@@ -28,6 +28,7 @@ export const useTodosStore = defineStore('todos', {
       async deleteById(id: number) {
         try {
           await axios.delete(`http://localhost:3001/todos/${id}`)
+          this.fetchData()
         } catch (error) {
           console.log(error)
         }
@@ -42,6 +43,7 @@ export const useTodosStore = defineStore('todos', {
 
         try {
           await axios.post('http://localhost:3001/todos', data)
+          this.fetchData()
         } catch (error) {
           console.log(error)
         }
@@ -51,6 +53,7 @@ export const useTodosStore = defineStore('todos', {
         const { id } = toDo
         try {
           await axios.put(`http://localhost:3001/todos/${id}`, toDo)
+          this.fetchData()
         } catch (error) {
           console.log(error)
         }
@@ -64,6 +67,7 @@ export const useTodosStore = defineStore('todos', {
         }
         try {
           await axios.put(`http://localhost:3001/todos/${id}`, dataUpdated)
+          this.fetchData()
         } catch (error) {
           console.log(error)
         }

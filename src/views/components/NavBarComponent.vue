@@ -43,7 +43,14 @@ import Vue from 'vue'
     }),
     methods: {
         changeRoute(routeName: string) {
-            this.$router.push({ name: routeName })
+          this.$router.push({ name: routeName }).catch(error => {
+            if (
+              error.name !== 'NavigationDuplicated' &&
+              !error.message.includes('Avoided redundant navigation to current location')
+            ) {
+              console.log(error)
+            }
+          })
         }
     },
   })

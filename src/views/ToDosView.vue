@@ -3,7 +3,7 @@
     <div class="content_container d-flex flex-column justify-content-center p-5">
         <div class="input_container w-100 m-2 mb-5 d-flex justify-content-center">
             <input 
-              placeholder="Insert the new task name" 
+              placeholder="Insert the new task's name" 
               class="form-control w-50" 
               type="text" 
               v-model="taskName" 
@@ -50,12 +50,11 @@
     },
     setup() {
       const store = useTodosStore()
-      const { addTodo, fetchData } = store
+      const { addTodo } = store
 
       return {
         addTodo: (name: string) => {
           addTodo(name)
-          fetchData()
         },
       }
     },
