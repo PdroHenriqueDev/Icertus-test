@@ -122,7 +122,7 @@
         <v-data-table
             v-else
             :headers="headers"
-            :items="todos"
+            :items="data"
             class="elevation-1 overflow-y-auto"
             :loading="shouldLoad"
             loading-text="Loading... Please wait"

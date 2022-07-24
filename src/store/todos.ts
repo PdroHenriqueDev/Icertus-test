@@ -8,11 +8,11 @@ export const useTodosStore = defineStore('todos', {
       shouldLoad: true,
     }),
     getters: {
-      doneTodos(state) {
-        return state.todos.filter((todo: ToDo) => todo.done)
+      doneTodos(): ToDo[] {
+        return this.todos.filter((todo: ToDo) => todo.done)
       },
-      pendingTodos(state) {
-        return state.todos.filter((todo: ToDo) => !todo.done)
+      pendingTodos(): ToDo[] {
+        return this.todos.filter((todo: ToDo) => !todo.done)
       },
     },
     actions: {

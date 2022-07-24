@@ -1,154 +1,19 @@
 {
   "todos": [
     {
-      "name": "Walk with the dog",
+      "name": "Clean the house",
       "done": true,
-      "id": 4
-    },
-    {
-      "name": "Wash the teeth",
-      "done": true,
-      "id": 9
+      "id": 1
     },
     {
       "name": "Wash the dog",
-      "done": true,
-      "id": 10
-    },
-    {
-      "name": "Teste excluir",
       "done": false,
-      "id": 11
+      "id": 2
     },
     {
-      "name": "Teste excluir",
-      "done": true,
-      "id": 12
-    },
-    {
-      "name": "Teste excluir",
+      "name": "Study TypeScript",
       "done": false,
-      "id": 16
-    },
-    {
-      "name": "Teste excluir",
-      "done": true,
-      "id": 17
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 18
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 19
-    },
-    {
-      "name": "Teste excluir",
-      "done": true,
-      "id": 20
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 21
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 22
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 23
-    },
-    {
-      "name": "Teste excluir",
-      "done": true,
-      "id": 24
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 25
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 26
-    },
-    {
-      "name": "Teste excluir",
-      "done": true,
-      "id": 27
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 28
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 29
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 30
-    },
-    {
-      "name": "Teste excluir",
-      "done": true,
-      "id": 31
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 32
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 34
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 35
-    },
-    {
-      "name": "Teste excluir",
-      "done": true,
-      "id": 36
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 37
-    },
-    {
-      "name": "Teste excluir",
-      "done": true,
-      "id": 38
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 45
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 46
-    },
-    {
-      "name": "Teste excluir",
-      "done": false,
-      "id": 47
+      "id": 3
     }
   ]
 }
