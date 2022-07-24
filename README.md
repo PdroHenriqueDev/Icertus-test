@@ -1,29 +1,17 @@
 # test-icertus
 
-## Project setup
+
+## Rode a API fake em um terminal diferente
 ```
-npm install
+yarn run db:serve
 ```
 
-### Compiles and hot-reloads for development
+## Instale as depenências em um terminal diferente
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+yarn
 ```
 
-### Run your unit tests
+## Rode o servidor de desenvolvimento
 ```
-npm run test:unit
+yarn run serve
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
