@@ -23,7 +23,7 @@ const routes: Array<RouteConfig> = [
       {
         path: '/pending',
         name: 'pending',
-        component: () => import(/* webpackChunkName: "done" */ '../views/PendingView.vue'),
+        component: () => import(/* webpackChunkName: "pending" */ '../views/PendingView.vue'),
       },
     ]
   },
